@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from "react-router-dom";
 import SavedNews from '../SavedNews/SavedNews';
 import Main from '../Main/Main';
+import LoginModal from '../LoginModal/LoginModal';
+import RegisterModal from '../RegisterModal/RegisterModal'
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import './App.css';
 
@@ -20,6 +22,24 @@ function App() {
   const handleLogInClick = () => {
     setActiveModal("login");
   }; 
+
+  const switchRegisterModal = () => {
+    closeActiveModal();
+    setActiveModal("login");
+  };
+
+  const switchLoginModal = () => {
+    closeActiveModal();
+    setActiveModal("register");
+  };
+
+  const onRegister = () => {
+    console.log('Hey');
+  }
+
+  const onLogIn = ()  => {
+    console.log("hey hey");
+  }
 
   useEffect(() => {
 
@@ -58,6 +78,22 @@ function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
+      {activeModal === "login" && (
+            <LoginModal
+              handleModalClose={closeActiveModal}
+              isOpen={activeModal === "login"}
+              onLogIn={onLogIn}
+              switchActiveModal={switchLoginModal}
+            />
+          )}
+          {activeModal === "register" && (
+            <RegisterModal
+              handleModalClose={closeActiveModal}
+              isOpen={activeModal === "register"}
+              onRegister={onRegister}
+              switchActiveModal={switchRegisterModal}
+            />
+          )}
     </div>
   )
 }

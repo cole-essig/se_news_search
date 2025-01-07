@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
-import "./RegisterModal.css";
+import './LoginModal.css';
 
-function RegisterModal({ handleModalClose, isOpen, onRegister, switchActiveModal }) {
+function LoginModal({ handleModalClose, isOpen, onLogIn, switchActiveModal}) {
     const [email, setEmail] = useState('');
     const handleEmailChange = (e) => {
       setEmail(e.target.value);
@@ -12,20 +12,15 @@ function RegisterModal({ handleModalClose, isOpen, onRegister, switchActiveModal
     const handlePasswordChange = (e) => {
       setPassword(e.target.value);
     }
-
-    const [name, setName] = useState('');
-    const handleNameChange = (e) => {
-      setName(e.target.value);
-    }
     
     const handleSubmit = (e) => {
       e.preventDefault();
-      onRegister();
+      onLogIn();
     }
 
-    const title = 'Sign Up';
-    const button = 'Sign Up';
-    const switchButton = 'or Log In'
+    const title = 'Log in';
+    const button = 'Log in';
+    const switchButton = 'or Sign Up'
     return (
     <ModalWithForm
         handleModalClose={handleModalClose}
@@ -36,18 +31,7 @@ function RegisterModal({ handleModalClose, isOpen, onRegister, switchActiveModal
         switchButton={switchButton}
         handleModalSwitch={switchActiveModal}
     >
-            <label htmlFor='name' className='modal__label'>
-                Name{" "}
-                <input 
-                    type='text'
-                    className='modal__input'
-                    id='name'
-                    placeholder='Name'
-                    value={name}
-                    onChange={handleNameChange}
-                />
-            </label>
-            <label htmlFor='email' className='modal__label'>
+        <label htmlFor='email' className='modal__label'>
                 Email{" "}
                 <input 
                     type='email'
@@ -73,4 +57,4 @@ function RegisterModal({ handleModalClose, isOpen, onRegister, switchActiveModal
   );
   }
 
-  export default RegisterModal
+  export default LoginModal
