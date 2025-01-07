@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import SavedNews from '../SavedNews/SavedNews';
 import Main from '../Main/Main';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-import './App.css'
+import './App.css';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -40,12 +40,11 @@ function App() {
   return (
     <div className='page'>
       <div className='page__content'>
-        <h1>Hello World!</h1>
         <Routes>
           <Route
             path='/'
             element={
-              <Main />
+              <Main isLoggedIn={isLoggedIn} />
             }
           />
           <Route
