@@ -5,11 +5,17 @@ import Main from '../Main/Main';
 import LoginModal from '../LoginModal/LoginModal';
 import RegisterModal from '../RegisterModal/RegisterModal'
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+import { CurrentUserContext } from '../../utils/contexts/CurrentUserContext';
 import './App.css';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeModal, setActiveModal] = useState("");
+  const [currentUser, setCurrentUser] = useState({
+    _id: "",
+    user: "",
+    email: ""
+  });
 
   const closeActiveModal = () => {
     setActiveModal("");
@@ -59,6 +65,7 @@ function App() {
   }, [activeModal]); 
   return (
     <div className='page'>
+      <CurrentUserContext.Provider value={currentUser}>
       <div className='page__content'>
         <Routes>
           <Route
@@ -94,6 +101,7 @@ function App() {
               switchActiveModal={switchRegisterModal}
             />
           )}
+      </CurrentUserContext.Provider>
     </div>
   )
 }

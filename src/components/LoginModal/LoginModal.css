@@ -31,7 +31,7 @@
 .modal__close {
   position: absolute;
   cursor: pointer;
-  /* background-image: url(../../assets/delete-button.svg); */
+  background-image: url(../../assets/close.svg);
   border: none;
   background-color: transparent;
   width: 16px;
