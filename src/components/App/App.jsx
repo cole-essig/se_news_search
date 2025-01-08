@@ -11,6 +11,7 @@ import './App.css';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeModal, setActiveModal] = useState("");
+  const [savedCards, setSavedCards] = useState('');
   const [currentUser, setCurrentUser] = useState({
     _id: "",
     user: "",
@@ -78,7 +79,7 @@ function App() {
             path='/saved-news'
             element={
               <ProtectedRoute isLoggedIn={isLoggedIn} anonymous>
-                <SavedNews />
+                <SavedNews isLoggedIn={isLoggedIn} savedCards={savedCards} />
               </ProtectedRoute>
             }
           />
