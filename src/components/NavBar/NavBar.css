@@ -1,0 +1,100 @@
+.nav {
+    display: flex;
+    max-width: 100%;
+    width: 100%;
+    justify-content: space-between;
+    min-height: 80px;
+    border-bottom: 1px solid #D1D2D6;
+}
+
+.nav__static-link {
+  margin: auto auto auto 105px;
+}
+
+.nav__logo-home {
+   text-decoration: none;
+   color: #fff;
+   cursor: pointer;
+   font-size: 20px;
+   font-weight: 700;
+   line-height: 1.2;
+}
+
+.nav__dynamic-links {
+    display: flex;
+    gap: 42px;
+    margin: auto 104px auto auto;
+}
+
+.nav__home-link {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    margin: auto 0 auto 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.nav__saved-articles {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    margin: auto 0 auto 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.nav__button {
+  width: 176px;
+  width: 176px;
+  height: 48px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+  border-radius: 26px;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav__user-button {
+    max-width: 130px;
+    width: 130px;
+    min-height: 48px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    border-radius: 26px;
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    padding: 0;
+}
+
+.nav__user-div {
+    display: flex;
+    justify-content: center;
+}
+
+.nav__user-text {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #fff;
+    text-overflow: ellipsis;
+}
+
+.nav__user-button_img {
+    max-width: 24px;
+    width: 100%;
+    min-height: 24px;
+    padding: 0;
+    margin-left: 8px;
+    color: #fff;
+}

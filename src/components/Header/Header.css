@@ -4,3 +4,11 @@
     height: 580px;
     background-image: url('../../assets/georgia-de-lotz--UsJoNxLaNo-unsplash.png');
 }
+
+.header__title {
+    color: #fff;
+}
+
+.header__subtitle {
+    color: #fff;
+}

@@ -19,6 +19,7 @@ const handleSearchBarChange = (e) => {
                     onChange={handleSearchBarChange}
                 />
             </label>
+            <button type="submit" className="search__button">Search</button>
         </div>
     )
 };

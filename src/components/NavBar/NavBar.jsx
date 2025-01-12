@@ -5,25 +5,32 @@ function NavBar({ isLoggedIn }) {
     const user = "Craig";
     return(
         <div className='nav'>
-                <Link to='/'>
-                  <img></img>
-                </Link>
+                <div className='nav__static-link'>
+                  <Link to='/' className='nav__logo-home'>
+                    NewsExplorer
+                  </Link>
+                </div>
                 {!isLoggedIn ?
-                  <div>
-                    <Link to='/'>
-                      <p>Home</p>
+                  <div className='nav__dynamic-links'>
+                    <Link to='/' className='nav__home-link'>
+                      Home
                     </Link>
-                    <button>Sign In</button>
+                    <button className='nav__button'>Sign In</button>
                   </div>
                   :
-                  <div>
-                    <Link to='/'>
-                      <p>Home</p>
+                  <div className='nav__dynamic-links'>
+                    <Link to='/' className='nav__home-link'>
+                      Home
                     </Link>
-                    <Link>
-                      <p>Saved Articles</p>
+                    <Link className='nav__saved-articles'>
+                      Saved Articles
                     </Link>
-                    <button>{user} <img /></button>
+                    <button className='nav__user-button'>
+                      <div className='nav__user-div'>
+                        <span className='nav__user-text'>{user}</span> 
+                        <img src='src\assets\logout-icon.svg' className='nav__user-button_img' />
+                      </div>
+                    </button>
                   </div>
                 }
               </div>
