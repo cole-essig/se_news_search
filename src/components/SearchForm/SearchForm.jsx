@@ -1,4 +1,5 @@
 import "./SearchForm.css";
+import { useState } from "react";
 
 function SearchForm() {
 const [search, setSearch] = useState('');
@@ -7,20 +8,19 @@ const handleSearchBarChange = (e) => {
 }
 
     return(
+        <>
         <div className="searchBar">
-          <label htmlFor='search bar' className='searchBar__label'>
-                Search Bar{" "}
                 <input 
                     type='email'
-                    className='SearchBar__input'
+                    className='searchBar__input'
                     id='searchBar'
                     placeholder='Enter Topic'
                     value={search}
                     onChange={handleSearchBarChange}
                 />
-            </label>
-            <button type="submit" className="search__button">Search</button>
+            <button type="submit" className="searchBar__button">Search</button>
         </div>
+        </>
     )
 };
 

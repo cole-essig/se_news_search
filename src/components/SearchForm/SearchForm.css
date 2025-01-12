@@ -1,0 +1,44 @@
+.searchBar {
+  position: relative;
+  max-width: 608px;
+  width: 100%;
+  margin: 0 auto 0;
+  padding: 0;
+}
+
+.searchBar__input {
+    display: block;
+    width: 65%; 
+    min-height: 68px;            
+    border: 1px solid #ccc; 
+    border-radius: 36px;  
+    padding: 0 20px;  
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;  
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .searchBar__input:focus {
+    outline: none;      
+    border: 1px solid transparent;
+  }
+
+.searchBar__button {
+    background-color: #2F71E5;
+    max-width: 168px;
+    width: 100%;
+    min-height: 70px;
+    color: #fff;
+    border-radius: 36px;
+    border: none;
+    position: absolute;
+    right: 58px;
+    top: -1px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2;
+}
