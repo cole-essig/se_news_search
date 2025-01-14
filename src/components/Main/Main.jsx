@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 import SearchResults from "../SearchResults/SearchResults";
 import './Main.css';
 
-function Main({ isLoggedIn }) {
+function Main({ isLoggedIn, signOut }) {
   const newStuff = {
     img: 'src/assets/georgia-de-lotz--UsJoNxLaNo-unsplash.png',
     date: 'November, 4 2020',
@@ -19,7 +19,7 @@ function Main({ isLoggedIn }) {
   }, []);
     return (
         <div className="main">
-          <Header isLoggedIn={isLoggedIn} />
+          <Header isLoggedIn={isLoggedIn} signOut={signOut} />
 
           { newsArticles.length > 0 && <SearchResults newsArticles={newsArticles} isLoggedIn={isLoggedIn} /> }
           

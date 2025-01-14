@@ -40,13 +40,25 @@ function App() {
     setActiveModal("register");
   };
 
-  const onRegister = () => {
+  const onRegister = ({ _id, user, email }) => {
     console.log('Hey');
+    setCurrentUser({ _id: _id, user: user, email: email });
+    localStorage.setItem('user', { _id: _id, user: user, email: email });
+    setIsLoggedIn(true);
   }
 
   const onLogIn = ()  => {
     console.log("hey hey");
+    const user = localStorage.getItem('user');
+    setCurrentUser({ _id: user._id, user: user.user, email: user.email });
+    setIsLoggedIn(true);
   }
+
+  const signOut = () => {
+    localStorage.removeItem('user');
+    setCurrentUser({ _id: '', user: "", email: ''});
+    setIsLoggedIn(false);
+  } 
 
   useEffect(() => {
 
@@ -63,7 +75,19 @@ function App() {
     return () => { 
       document.removeEventListener("keydown", handleEscClose);
     };
-  }, [activeModal]); 
+  }, [activeModal]);
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (!user) {
+      setActiveModal("login");
+      return;
+    };
+    setCurrentUser({ _id: user._id, user: user.user, email: user.email });
+    setIsLoggedIn(true);
+   
+  }, []);
+
   return (
     <div className='page'>
       <CurrentUserContext.Provider value={currentUser}>
@@ -72,7 +96,7 @@ function App() {
           <Route
             path='/'
             element={
-              <Main isLoggedIn={isLoggedIn} />
+              <Main isLoggedIn={isLoggedIn} signOut={signOut} />
             }
           />
           <Route
