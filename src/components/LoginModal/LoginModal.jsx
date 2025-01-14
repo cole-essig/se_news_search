@@ -18,9 +18,9 @@ function LoginModal({ handleModalClose, isOpen, onLogIn, switchActiveModal}) {
       onLogIn();
     }
 
-    const title = 'Log in';
-    const button = 'Log in';
-    const switchButton = 'or Sign Up'
+    const title = 'Sign in';
+    const button = 'Sign in';
+    const switchButton = 'Sign Up'
     return (
     <ModalWithForm
         handleModalClose={handleModalClose}
