@@ -1,9 +1,25 @@
+import { useState } from 'react';
 import './NewsCard.css'
 
-function NewsCard({ card }) {
+function NewsCard({ card, isLoggedIn }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
+
     return(
         <div className='newsCard'>
-            <button className='newsCard__save-button'>
+            {
+              !isLoggedIn ? 
+              <div className={`newsCard__signin ${isHovered ? 'newsCards_signin_on' : ''}`}>
+                <p className="newsCard__signin_prompt">Sign in to save articles</p>
+              </div> : ''
+            }
+            <button 
+              className='newsCard__save-button'
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
                 <img src='src/assets/bookmark.svg' alt='bookmark image' className='newsCard__save-button_image'/>
             </button>
             <img src={card.img} className='newsCard__image' alt='card image' />

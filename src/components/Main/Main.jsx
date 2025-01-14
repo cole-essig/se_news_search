@@ -7,7 +7,7 @@ import './Main.css';
 
 function Main({ isLoggedIn }) {
   const newStuff = {
-    img: 'src/assets/Me.cole.jpeg',
+    img: 'src/assets/georgia-de-lotz--UsJoNxLaNo-unsplash.png',
     date: 'November, 4 2020',
     title: 'Nature makes you better',
     body: 'BLah vfhghjhbv khchj mvkj fkhvjgjkg jkh gkj fjh jhkvhhk khvjhvvhgcbvcnb b,jhgj,hmb,jh jhvbmbvkghcmnb,vhg jk',
@@ -21,7 +21,7 @@ function Main({ isLoggedIn }) {
         <div className="main">
           <Header isLoggedIn={isLoggedIn} />
 
-          { newsArticles.length > 0 && <SearchResults newsArticles={newsArticles} /> }
+          { newsArticles.length > 0 && <SearchResults newsArticles={newsArticles} isLoggedIn={isLoggedIn} /> }
           
           <About />
           <Footer />

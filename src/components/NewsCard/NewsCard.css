@@ -10,6 +10,32 @@
     overflow: hidden;
 }
 
+.newsCard__signin {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 24px;
+  right: 69px;
+  max-width: 182px;
+  width: 100%;
+  min-height: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.25s linear;
+}
+
+.newsCards_signin_on {
+  opacity: 1;
+}
+
+.newsCard__signin_prompt {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: auto;
+}
+
 .newsCard__save-button {
   position: absolute;
   max-width: 40px;
