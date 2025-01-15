@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './NewsCard.css'
 
-function NewsCard({ card, isLoggedIn }) {
+function NewsCard({ card, isLoggedIn, handleCardMark }) {
   const [isHovered, setIsHovered] = useState(false);
   const [isMarked, setIsMarked] = useState(false);
 
@@ -11,6 +11,7 @@ function NewsCard({ card, isLoggedIn }) {
   const handleClick = (e) => {
     e.preventDefault();
     setIsMarked(!isMarked);
+    handleCardMark(card);
   }
 
     return(

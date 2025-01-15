@@ -5,23 +5,12 @@ import Footer from "../Footer/Footer";
 import SearchResults from "../SearchResults/SearchResults";
 import './Main.css';
 
-function Main({ isLoggedIn, signOut }) {
-  const newStuff = {
-    img: 'src/assets/georgia-de-lotz--UsJoNxLaNo-unsplash.png',
-    date: 'November, 4 2020',
-    title: 'Nature makes you better',
-    body: 'BLah vfhghjhbv khchj mvkj fkhvjgjkg jkh gkj fjh jhkvhhk khvjhvvhgcbvcnb b,jhgj,hmb,jh jhvbmbvkghcmnb,vhg jk',
-    site: 'TreeHugger',
-  }
-  const [newsArticles, setNewsArticles] = useState([newStuff]);
-  useEffect(() => {
-    setNewsArticles([newStuff, ...newsArticles]);
-  }, []);
+function Main({ isLoggedIn, signOut, handleCardMark, news }) {
     return (
         <div className="main">
           <Header isLoggedIn={isLoggedIn} signOut={signOut} />
 
-          { newsArticles.length > 0 && <SearchResults newsArticles={newsArticles} isLoggedIn={isLoggedIn} /> }
+          { news.length > 0 && <SearchResults news={news} isLoggedIn={isLoggedIn} handleCardMark={handleCardMark} /> }
           
           <About />
           <Footer />

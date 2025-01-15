@@ -9,14 +9,28 @@ import { CurrentUserContext } from '../../utils/contexts/CurrentUserContext';
 import './App.css';
 
 function App() {
+  // ------------------------------------
+  // Constants
+  // ------------------------------------
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeModal, setActiveModal] = useState("");
-  const [savedCards, setSavedCards] = useState('');
+  const [savedCards, setSavedCards] = useState([]);
+  const [news, setNews] = useState([]);
   const [currentUser, setCurrentUser] = useState({
     user: "",
     email: ""
   });
+  const newStuff = {
+    img: 'src/assets/georgia-de-lotz--UsJoNxLaNo-unsplash.png',
+    date: 'November, 4 2020',
+    title: 'Nature makes you better',
+    body: 'BLah vfhghjhbv khchj mvkj fkhvjgjkg jkh gkj fjh jhkvhhk khvjhvvhgcbvcnb b,jhgj,hmb,jh jhvbmbvkghcmnb,vhg jk',
+    site: 'TreeHugger',
+  };
 
+  // ------------------------------------
+  // Modal Functions
+  // ------------------------------------
   const closeActiveModal = () => {
     setActiveModal("");
   };
@@ -39,6 +53,9 @@ function App() {
     setActiveModal("register");
   };
 
+  // ------------------------------------
+  // User Functions
+  // ------------------------------------
   const onRegister = ({ password, user, email }) => {
     localStorage.setItem('user', JSON.stringify({ password: password, user: user, email: email }));
     setCurrentUser({ user: user, email: email });
@@ -63,7 +80,22 @@ function App() {
     setCurrentUser({ password: '', user: "", email: ''});
     setIsLoggedIn(false);
   } 
+// ------------------------------------
+  // API calls
+  // ------------------------------------
 
+
+
+  // ------------------------------------
+  // Handler Functions
+  // ------------------------------------
+  const handleCardMark = (card) => {
+    setSavedCards(card);
+  }
+
+  // ------------------------------------
+  // UseEffects
+  // ------------------------------------
   useEffect(() => {
 
     if (!activeModal) return; 
@@ -80,6 +112,14 @@ function App() {
       document.removeEventListener("keydown", handleEscClose);
     };
   }, [activeModal]);
+
+  useEffect(() => {
+    setNews([newStuff]);
+  }, []);
+
+  useEffect(() => {
+    setSavedCards([newStuff]);
+  }, []);
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -99,14 +139,14 @@ function App() {
           <Route
             path='/'
             element={
-              <Main isLoggedIn={isLoggedIn} signOut={signOut} />
+              <Main isLoggedIn={isLoggedIn} signOut={signOut} handleCardMark={handleCardMark} news={news} />
             }
           />
           <Route
             path='/saved-news'
             element={
               <ProtectedRoute isLoggedIn={isLoggedIn} anonymous>
-                <SavedNews isLoggedIn={isLoggedIn} savedCards={savedCards} />
+                <SavedNews isLoggedIn={isLoggedIn} savedCards={savedCards} signOut={signOut} />
               </ProtectedRoute>
             }
           />
