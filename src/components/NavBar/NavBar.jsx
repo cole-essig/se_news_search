@@ -33,7 +33,7 @@ function NavBar({ isLoggedIn, signOut }) {
                     </Link>
                     <button className='nav__user-button'>
                       <div className='nav__user-div'>
-                        <span className='nav__user-text'>{currentUser}</span> 
+                        <span className='nav__user-text'>{currentUser.user}</span> 
                         <img src='src\assets\logout-icon.svg' className='nav__user-button_img' />
                       </div>
                     </button>

@@ -13,7 +13,6 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [savedCards, setSavedCards] = useState('');
   const [currentUser, setCurrentUser] = useState({
-    _id: "",
     user: "",
     email: ""
   });
@@ -40,23 +39,28 @@ function App() {
     setActiveModal("register");
   };
 
-  const onRegister = ({ _id, user, email }) => {
-    console.log('Hey');
-    setCurrentUser({ _id: _id, user: user, email: email });
-    localStorage.setItem('user', { _id: _id, user: user, email: email });
+  const onRegister = ({ password, user, email }) => {
+    localStorage.setItem('user', JSON.stringify({ password: password, user: user, email: email }));
+    setCurrentUser({ user: user, email: email });
     setIsLoggedIn(true);
+    closeActiveModal();
   }
 
-  const onLogIn = ()  => {
-    console.log("hey hey");
-    const user = localStorage.getItem('user');
-    setCurrentUser({ _id: user._id, user: user.user, email: user.email });
-    setIsLoggedIn(true);
+  const onLogIn = ({ email, password })  => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (email === user.email && password === user.password) {
+      setCurrentUser({ user: user.user, email: user.email });
+      setIsLoggedIn(true);
+    } else {
+    console.log("ERROR: Wrong email or password");
+    // throw new Error('ERROR: Wrong email or password')
+    }
+    return 
   }
 
   const signOut = () => {
     localStorage.removeItem('user');
-    setCurrentUser({ _id: '', user: "", email: ''});
+    setCurrentUser({ password: '', user: "", email: ''});
     setIsLoggedIn(false);
   } 
 
@@ -78,14 +82,13 @@ function App() {
   }, [activeModal]);
 
   useEffect(() => {
-    const user = localStorage.getItem("user");
+    const user = JSON.parse(localStorage.getItem('user'));
     if (!user) {
       setActiveModal("login");
       return;
     };
-    setCurrentUser({ _id: user._id, user: user.user, email: user.email });
-    setIsLoggedIn(true);
-   
+    setCurrentUser({ user: user.user, email: user.email });
+    setIsLoggedIn(true);   
   }, []);
 
   return (

@@ -13,19 +13,19 @@ function RegisterModal({ handleModalClose, isOpen, onRegister, switchActiveModal
       setPassword(e.target.value);
     }
 
-    const [name, setName] = useState('');
-    const handleNameChange = (e) => {
-      setName(e.target.value);
+    const [user, setUser] = useState('');
+    const handleUserChange = (e) => {
+      setUser(e.target.value);
     }
     
     const handleSubmit = (e) => {
       e.preventDefault();
-      onRegister();
+      onRegister({ password, user, email });
     }
 
     const title = 'Sign Up';
     const button = 'Sign Up';
-    const switchButton = 'or Log In'
+    const switchButton = 'Sign In'
     return (
     <ModalWithForm
         handleModalClose={handleModalClose}
@@ -37,14 +37,14 @@ function RegisterModal({ handleModalClose, isOpen, onRegister, switchActiveModal
         handleModalSwitch={switchActiveModal}
     >
             <label htmlFor='name' className='modal__label'>
-                Name{" "}
+                Username{" "}
                 <input 
                     type='text'
                     className='modal__input'
-                    id='name'
-                    placeholder='Name'
-                    value={name}
-                    onChange={handleNameChange}
+                    id='user'
+                    placeholder='Username'
+                    value={user}
+                    onChange={handleUserChange}
                 />
             </label>
             <label htmlFor='email' className='modal__label'>
