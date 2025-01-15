@@ -3,9 +3,15 @@ import './NewsCard.css'
 
 function NewsCard({ card, isLoggedIn }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isMarked, setIsMarked] = useState(false);
 
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    setIsMarked(!isMarked);
+  }
 
     return(
         <div className='newsCard'>
@@ -20,7 +26,15 @@ function NewsCard({ card, isLoggedIn }) {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-                <img src='src/assets/bookmark.svg' alt='bookmark image' className='newsCard__save-button_image'/>
+                <img 
+                  src={
+                    isMarked ? 'src/assets/bookmark-marked.svg' :
+                    (isHovered ? 'src/assets/bookmark-hover.svg' : 'src/assets/bookmark-normal.svg')
+                  } 
+                  alt='bookmark image' 
+                  className={`newsCard__save-button_image ${isHovered ? 'newsCard__save-button_image-hov' : ''}`}
+                  onClick={handleClick}
+                />
             </button>
             <img src={card.img} className='newsCard__image' alt='card image' />
             <p className='newsCard__date'>{card.date}</p>

@@ -51,10 +51,15 @@
 }
 
 .newsCard__save-button_image {
-  max-width: 26px;
+  max-width: 14px;
   width: 100%;
-  min-height: 26px;
+  min-height: 19px;
   color: #2F71E5;
+  transition: max-width 0.25s linear;
+}
+
+.newsCard__save-button_image-hov {
+  max-width: 17px;
 }
 
 .newsCard__image {
