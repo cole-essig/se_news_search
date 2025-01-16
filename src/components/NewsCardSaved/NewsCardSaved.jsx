@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './NewsCardSaved.css'
 
-function NewsCardSaved({ card }) {
+function NewsCardSaved({ card, handleCardDelete }) {
   const [isHovered, setIsHovered] = useState(false);
   const nature = 'Nature';
 
@@ -10,6 +10,7 @@ function NewsCardSaved({ card }) {
 
   const handleDeleteClick = (e) => {
     e.preventDefault();
+    handleCardDelete(card._id);
   }
 
     return(

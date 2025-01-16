@@ -26,6 +26,7 @@ function App() {
     title: 'Nature makes you better',
     body: 'BLah vfhghjhbv khchj mvkj fkhvjgjkg jkh gkj fjh jhkvhhk khvjhvvhgcbvcnb b,jhgj,hmb,jh jhvbmbvkghcmnb,vhg jk',
     site: 'TreeHugger',
+    _id: Math.random(),
   };
 
   // ------------------------------------
@@ -93,6 +94,10 @@ function App() {
     setSavedCards(card);
   }
 
+  const handleCardDelete = (cardId) => {
+    setSavedCards(savedCards.filter((item) => item._id !== cardId));
+  }
+
   // ------------------------------------
   // UseEffects
   // ------------------------------------
@@ -146,7 +151,7 @@ function App() {
             path='/saved-news'
             element={
               <ProtectedRoute isLoggedIn={isLoggedIn} anonymous>
-                <SavedNews isLoggedIn={isLoggedIn} savedCards={savedCards} signOut={signOut} />
+                <SavedNews isLoggedIn={isLoggedIn} savedCards={savedCards} signOut={signOut} handleCardDelete={handleCardDelete} />
               </ProtectedRoute>
             }
           />
