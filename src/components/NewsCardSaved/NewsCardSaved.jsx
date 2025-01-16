@@ -24,7 +24,7 @@ function NewsCardSaved({ card }) {
             >
                 <img 
                   src={
-                    isHovered ? 'src/assets/trashBin.svg' : 'src/assets/bookmark-normal.svg'
+                    isHovered ? 'src/assets/trashBin-dark.svg' : 'src/assets/trashBin.svg'
                   } 
                   alt='bookmark image' 
                   className={`newsCardS__save-button_image ${isHovered ? 'newsCardS__save-button_image-hov' : ''}`}

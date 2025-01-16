@@ -17,7 +17,6 @@
   top: 24px;
   right: 69px;
   max-width: 182px;
-  width: 100%;
   min-height: 40px;
   background-color: #fff;
   border-radius: 8px;
@@ -34,6 +33,7 @@
   font-weight: 500;
   line-height: 1.2;
   margin: auto;
+  padding: 0 8px;
 }
 
 .newsCardS__save-button {
@@ -68,8 +68,7 @@
     position: absolute;
     top: 24px;
     left: 40px;
-    max-width: 182px;
-    width: 100%;
+    max-width: 175px;
     min-height: 40px;
     background-color: #fff;
     border-radius: 8px;
@@ -79,7 +78,8 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 1.2;
-    margin: auto; 
+    margin: auto;
+    padding: 0 22px;
 }
 
 .newsCardS__image {
@@ -119,5 +119,5 @@
   font-size: 16px;
   font-weight: 700;
   line-height: 1.2;
-  margin: 0 24px 24px;
+  margin: auto 24px 24px;
 }
