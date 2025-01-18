@@ -76,11 +76,21 @@ function App() {
   } 
 // ------------------------------------
   // API calls
-  // ------------------------------------
+  // ----------------------------------
   const fetchSearchResults = (keyword) => {
     getNewsbyKeyword(keyword)
     .then((res) => {
-      console.log(res.articles);
+      const results = handleSearchInfo(res.articles);
+      const newCards = results.map(item => ({
+        img: item.urlToImage,
+        date: item.publishedAt,
+        title: item.title,
+        body: item.content,
+        site: item.source.name,
+        url: item.url,
+        _id: Math.random(),
+      }));
+      setNews(prevNews => [...newCards, ...prevNews]);
     })
     .catch((err) => {
       console.log(err);
@@ -99,10 +109,16 @@ function App() {
     setSavedCards(savedCards.filter((item) => item._id !== cardId));
   }
 
-  const handle = () => {
-    
+  const handleSearchInfo = (arr) => {
+   const nonNullArticles = arr.filter(item => item.author !== null);
+   const result = nonNullArticles
+
+   return result;
   }
 
+  const handleShowMore = () => {
+
+  }
   // ------------------------------------
   // UseEffects
   // ------------------------------------
@@ -122,10 +138,6 @@ function App() {
       document.removeEventListener("keydown", handleEscClose);
     };
   }, [activeModal]);
-
-  useEffect(() => {
-    setNews([newStuff]);
-  }, []);
 
   useEffect(() => {
     setSavedCards([newStuff]);
