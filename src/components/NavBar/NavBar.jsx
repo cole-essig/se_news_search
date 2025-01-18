@@ -3,12 +3,17 @@ import { Link } from 'react-router-dom';
 import { useContext } from "react";
 import { CurrentUserContext } from "../../utils/contexts/CurrentUserContext";
 
-function NavBar({ isLoggedIn, signOut, className, isHome }) {
+function NavBar({ isLoggedIn, signOut, className, isHome, signInClick }) {
     const currentUser = useContext(CurrentUserContext);
     const handleLogout = (e) => {
       e.preventDefault();
       signOut();
     }
+
+    const handleSignIn = () => {
+    signInClick();
+    }
+
     return(
         <div className='nav'>
                 <div className='nav__static-link'>
@@ -21,7 +26,7 @@ function NavBar({ isLoggedIn, signOut, className, isHome }) {
                     <Link to='/' className='nav__home-link'>
                       Home
                     </Link>
-                    <button className='nav__button'>Sign In</button>
+                    <button type='button' className='nav__button' onClick={handleSignIn} >Sign In</button>
                   </div>
                   :
                   <div className='nav__dynamic-links'>

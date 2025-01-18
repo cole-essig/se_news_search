@@ -10,6 +10,10 @@ function NewsCard({ card, isLoggedIn, handleCardMark }) {
 
   const handleClick = (e) => {
     e.preventDefault();
+    if (!isLoggedIn) {
+      alert('Must be logged in')
+      return
+    }
     setIsMarked(!isMarked);
     handleCardMark(card);
   }
@@ -30,7 +34,7 @@ function NewsCard({ card, isLoggedIn, handleCardMark }) {
                 <img 
                   src={
                     isMarked ? 'src/assets/bookmark-marked.svg' :
-                    (isHovered ? 'src/assets/bookmark-hover.svg' : 'src/assets/bookmark-normal.svg')
+                    (isHovered ? 'src/assets/bookmark-hover.svg' : 'src/assets/bookmark-static.svg')
                   } 
                   alt='bookmark image' 
                   className={`newsCard__save-button_image ${isHovered ? 'newsCard__save-button_image-hov' : ''}`}

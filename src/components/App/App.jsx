@@ -116,9 +116,10 @@ function App() {
    return result;
   }
 
-  const handleShowMore = () => {
-
+  const handleSignInClick = () => {
+    setActiveModal('login')
   }
+
   // ------------------------------------
   // UseEffects
   // ------------------------------------
@@ -161,14 +162,26 @@ function App() {
           <Route
             path='/'
             element={
-              <Main isLoggedIn={isLoggedIn} signOut={signOut} handleCardMark={handleCardMark} news={news} fetchSearchResults={fetchSearchResults} />
+              <Main 
+                isLoggedIn={isLoggedIn} 
+                signOut={signOut} 
+                handleCardMark={handleCardMark} 
+                news={news} 
+                fetchSearchResults={fetchSearchResults}
+                handleSignInClick={handleSignInClick}
+              />
             }
           />
           <Route
             path='/saved-news'
             element={
               <ProtectedRoute isLoggedIn={isLoggedIn} anonymous>
-                <SavedNews isLoggedIn={isLoggedIn} savedCards={savedCards} signOut={signOut} handleCardDelete={handleCardDelete} />
+                <SavedNews 
+                  isLoggedIn={isLoggedIn} 
+                  savedCards={savedCards} 
+                  signOut={signOut} 
+                  handleCardDelete={handleCardDelete} 
+                />
               </ProtectedRoute>
             }
           />
