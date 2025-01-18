@@ -21,15 +21,7 @@ function App() {
     user: "",
     email: ""
   });
-  const newStuff = {
-    img: 'src/assets/georgia-de-lotz--UsJoNxLaNo-unsplash.png',
-    date: 'November, 4 2020',
-    title: 'Nature makes you better',
-    body: 'BLah vfhghjhbv khchj mvkj fkhvjgjkg jkh gkj fjh jhkvhhk khvjhvvhgcbvcnb b,jhgj,hmb,jh jhvbmbvkghcmnb,vhg jk',
-    site: 'TreeHugger',
-    _id: Math.random(),
-  };
-
+ 
   // ------------------------------------
   // Modal Functions
   // ------------------------------------
@@ -102,7 +94,7 @@ function App() {
   // Handler Functions
   // ------------------------------------
   const handleCardMark = (card) => {
-    setSavedCards(card);
+    setSavedCards((savedCards) => [card, ...savedCards]);
   }
 
   const handleCardDelete = (cardId) => {
@@ -139,10 +131,6 @@ function App() {
       document.removeEventListener("keydown", handleEscClose);
     };
   }, [activeModal]);
-
-  useEffect(() => {
-    setSavedCards([newStuff]);
-  }, []);
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
