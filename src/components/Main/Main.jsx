@@ -5,10 +5,10 @@ import Footer from "../Footer/Footer";
 import SearchResults from "../SearchResults/SearchResults";
 import './Main.css';
 
-function Main({ isLoggedIn, signOut, handleCardMark, news }) {
+function Main({ isLoggedIn, signOut, handleCardMark, news, fetchSearchResults }) {
     return (
         <div className="main">
-          <Header isLoggedIn={isLoggedIn} signOut={signOut} />
+          <Header isLoggedIn={isLoggedIn} signOut={signOut} fetchSearchResults={fetchSearchResults} />
 
           { news.length > 0 && <SearchResults news={news} isLoggedIn={isLoggedIn} handleCardMark={handleCardMark} /> }
           

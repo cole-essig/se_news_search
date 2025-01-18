@@ -1,25 +1,30 @@
 import "./SearchForm.css";
 import { useState } from "react";
 
-function SearchForm() {
+function SearchForm({ fetchSearchResults }) {
 const [search, setSearch] = useState('');
 const handleSearchBarChange = (e) => {
     setSearch(e.target.value);
 }
 
+const handleSubmit = (e) => {
+    e.preventDefault();
+    fetchSearchResults(search);
+}
+
     return(
         <>
-        <div className="searchBar">
+        <form className="searchBar" onSubmit={handleSubmit} >
                 <input 
-                    type='email'
+                    type='text'
                     className='searchBar__input'
                     id='searchBar'
                     placeholder='Enter Topic'
                     value={search}
                     onChange={handleSearchBarChange}
                 />
-            <button type="submit" className="searchBar__button">Search</button>
-        </div>
+            <button type="submit" className="searchBar__button" >Search</button>
+        </form>
         </>
     )
 };

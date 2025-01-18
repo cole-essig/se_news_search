@@ -6,6 +6,7 @@ import LoginModal from '../LoginModal/LoginModal';
 import RegisterModal from '../RegisterModal/RegisterModal'
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import { CurrentUserContext } from '../../utils/contexts/CurrentUserContext';
+import { getNewsbyKeyword } from '../../utils/api';
 import './App.css';
 
 function App() {
@@ -35,14 +36,6 @@ function App() {
   const closeActiveModal = () => {
     setActiveModal("");
   };
-
-  const handleSignUpClick = () => {
-    setActiveModal("register");
-  };
-
-  const handleLogInClick = () => {
-    setActiveModal("login");
-  }; 
 
   const switchRegisterModal = () => {
     closeActiveModal();
@@ -84,7 +77,15 @@ function App() {
 // ------------------------------------
   // API calls
   // ------------------------------------
-
+  const fetchSearchResults = (keyword) => {
+    getNewsbyKeyword(keyword)
+    .then((res) => {
+      console.log(res.articles);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }
 
 
   // ------------------------------------
@@ -96,6 +97,10 @@ function App() {
 
   const handleCardDelete = (cardId) => {
     setSavedCards(savedCards.filter((item) => item._id !== cardId));
+  }
+
+  const handle = () => {
+    
   }
 
   // ------------------------------------
@@ -144,7 +149,7 @@ function App() {
           <Route
             path='/'
             element={
-              <Main isLoggedIn={isLoggedIn} signOut={signOut} handleCardMark={handleCardMark} news={news} />
+              <Main isLoggedIn={isLoggedIn} signOut={signOut} handleCardMark={handleCardMark} news={news} fetchSearchResults={fetchSearchResults} />
             }
           />
           <Route
