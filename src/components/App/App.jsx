@@ -14,6 +14,7 @@ function App() {
   // Constants
   // ------------------------------------
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [activeModal, setActiveModal] = useState("");
   const [savedCards, setSavedCards] = useState([]);
   const [news, setNews] = useState([]);
@@ -38,6 +39,7 @@ function App() {
     closeActiveModal();
     setActiveModal("register");
   };
+
 
   // ------------------------------------
   // User Functions
@@ -70,6 +72,7 @@ function App() {
   // API calls
   // ----------------------------------
   const fetchSearchResults = (keyword) => {
+    setIsLoading(true);
     getNewsbyKeyword(keyword)
     .then((res) => {
       const results = handleSearchInfo(res.articles);
@@ -83,12 +86,12 @@ function App() {
         _id: Math.random(),
       }));
       setNews(prevNews => [...newCards, ...prevNews]);
+      setIsLoading(false);
     })
     .catch((err) => {
       console.log(err);
     })
   }
-
 
   // ------------------------------------
   // Handler Functions
@@ -157,6 +160,7 @@ function App() {
                 news={news} 
                 fetchSearchResults={fetchSearchResults}
                 handleSignInClick={handleSignInClick}
+                isLoading={isLoading}
               />
             }
           />

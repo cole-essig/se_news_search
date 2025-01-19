@@ -1,0 +1,9 @@
+.loading {
+    display: flex;
+    width: 100%;
+    background-color: #D1D2D6;
+    opacity: 70%;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    min-height: 282px;
+    position: relative;
+}
