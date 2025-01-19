@@ -1,5 +1,15 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(../../assets/roboto-400-regular.woff2);
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url(../../assets/roboto-slab-400-regular.woff2);
+}
 .page {
   background-color: #fff;
+  font-family: "Roboto", 'Times New Roman', Times, serif;
 }
 
 
