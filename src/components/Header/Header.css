@@ -27,3 +27,13 @@
     line-height: 1.2;
     margin: 0;
 }
+
+@media screen and (max-width: 600px) {
+    .header__text {
+        margin: 50px 16px 70px;
+    }
+
+    .header__title {
+        font-size: 36px;
+    }
+}

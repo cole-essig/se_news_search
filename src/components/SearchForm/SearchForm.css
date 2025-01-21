@@ -42,3 +42,20 @@
     font-weight: 400;
     line-height: 1.2;
 }
+
+@media screen and (max-width: 600px) {
+  .searchBar {
+    max-width: 85%;
+  }
+
+  .searchBar__input {
+    width: 100%;
+    padding: 0;
+  }
+
+  .searchBar__button {
+    top: 80px;
+    right: 0;
+    max-width: 85vw;
+  }
+}
