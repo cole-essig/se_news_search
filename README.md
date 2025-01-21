@@ -1,4 +1,4 @@
-# React + Vite
+# News Search
 
 News Search Website
 Welcome to the News Search Website, a platform that allows users to search news articles, save them for later, and log in to manage their preferences. Powered by the NewsExplorerAPI, this app provides a simple, user-friendly interface to explore the latest news based on specific keywords.
