@@ -59,3 +59,28 @@
     min-height: 24px;
 }
 
+@media screen and (max-width: 800px) {
+  .footer__copyright {
+    margin: auto 0 auto 40px
+  }
+
+  .footer__links {
+    margin: auto 40px auto 0;
+  }  
+  
+}
+
+@media screen and (max-width: 440px) {
+ .footer {
+  flex-direction: column-reverse;
+  margin-top: 20px;
+ }
+
+ .footer__links {
+  margin: 0 auto 18px;
+ }
+
+ .footer__copyright {
+  margin: auto 16px auto 16px;
+}
+}

@@ -43,3 +43,24 @@
     line-height: 1.2;
     margin: 64px 0 80px;
 }
+
+@media screen and (max-width: 800px) {
+  .search__results {
+    margin: 0 40px 0;
+  }
+
+  .search__header {
+    margin: 40px auto 32px 104px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .search__results {
+    margin: 0 16px 0;
+  }
+  
+  .search__header {
+    margin: 32px auto 58px 16px;
+  }
+
+}

@@ -121,3 +121,30 @@
   line-height: 1.2;
   margin: auto 24px 24px;
 }
+
+@media screen and (max-width: 800px) {
+  .newsCardS {
+    max-width: 280px;
+    min-height: 420px;
+  }
+
+  .newsCardS__image {
+    min-height: 150px;
+  }
+
+  .newsCardS__title {
+    font-size: 22px;
+  }
+  
+}
+
+@media screen and (max-width: 430px) {
+  .newsCardS__keyword_div {
+    left: 20px
+  }
+
+  .newsCardS__delete {
+    right: 24px;
+    top: 72px;
+  }
+}

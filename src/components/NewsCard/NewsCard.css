@@ -82,6 +82,7 @@
   font-size: 26px;
   font-weight: 400;
   line-height: 1.2;
+  font-family: "Roboto Slab", 'Times New Roman', Times, serif;
   margin: 0 24px 16px;
 }
 
@@ -100,4 +101,20 @@
   font-weight: 700;
   line-height: 1.2;
   margin: auto 24px 24px;
+}
+
+@media screen and (max-width: 800px) {
+  .newsCard {
+    max-width: 260px;
+    min-height: 420px;
+  }
+
+  .newsCard__image {
+    min-height: 150px;
+  }
+
+  .newsCard__title {
+    font-size: 22px;
+  }
+  
 }
