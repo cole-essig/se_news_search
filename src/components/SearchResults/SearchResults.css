@@ -30,7 +30,7 @@
 }
 
 .search__more-button {
-    background-color: #E8E8E8;
+    background-color: #FFFFFF;
     max-width: 288px;
     width: 100%;
     min-height: 64px;
@@ -42,6 +42,11 @@
     font-weight: 500;
     line-height: 1.2;
     margin: 64px 0 80px;
+    transition: background-color .25s linear;
+}
+
+.search__more-button:hover {
+  background-color: #E8E8E8;
 }
 
 @media screen and (max-width: 800px) {
