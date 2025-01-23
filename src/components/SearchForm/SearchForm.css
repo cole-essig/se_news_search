@@ -48,6 +48,16 @@
   background-color: #347EFF;
 }
 
+.searchbar__button {
+  top: 0;
+}
+
+@media screen and (max-width: 850px) {
+  .searchbar {
+    max-width: calc(100% - 320px);
+  }
+}
+
 @media screen and (max-width: 600px) {
   .searchbar {
     max-width: 85%;

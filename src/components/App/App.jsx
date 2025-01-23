@@ -5,7 +5,8 @@ import Main from '../Main/Main';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import LoginModal from '../LoginModal/LoginModal';
-import RegisterModal from '../RegisterModal/RegisterModal'
+import RegisterModal from '../RegisterModal/RegisterModal';
+import SuccessModal from '../SuccessModal/SuccessModal';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import { CurrentUserContext } from '../../utils/contexts/CurrentUserContext';
 import { getNewsbyKeyword } from '../../utils/api';
@@ -48,9 +49,7 @@ function App() {
   // ------------------------------------
   const onRegister = ({ password, user, email }) => {
     localStorage.setItem('user', JSON.stringify({ password: password, user: user, email: email }));
-    setCurrentUser({ user: user, email: email });
-    setIsLoggedIn(true);
-    closeActiveModal();
+    setActiveModal('complete-register');
   }
 
   const onLogIn = ({ email, password })  => {
@@ -58,6 +57,7 @@ function App() {
     if (email === user.email && password === user.password) {
       setCurrentUser({ user: user.user, email: user.email });
       setIsLoggedIn(true);
+      closeActiveModal();
     } else {
     console.log("ERROR: Wrong email or password");
     // throw new Error('ERROR: Wrong email or password')
@@ -205,6 +205,13 @@ function App() {
               isOpen={activeModal === "register"}
               onRegister={onRegister}
               switchActiveModal={switchRegisterModal}
+            />
+          )}
+          {activeModal === 'complete-register' && (
+            <SuccessModal
+              handleModalClose={closeActiveModal}
+              isOpen={activeModal === 'complete-register'}
+              openLogin={switchRegisterModal}
             />
           )}
       </CurrentUserContext.Provider>
