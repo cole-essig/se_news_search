@@ -14,12 +14,12 @@ function NewsCardSaved({ card, handleCardDelete }) {
   }
 
     return(
-        <div className='newsCardS'>
-            <div className={`newsCardS__delete ${isHovered ? 'newsCardS_delete_on' : ''}`}>
-              <p className="newsCardS__delete_prompt">Remove from saved</p>
+        <div className='newscards'>
+            <div className={`newscards__delete ${isHovered ? 'newscards_delete_on' : ''}`}>
+              <p className="newscards__delete_prompt">Remove from saved</p>
             </div>
             <button 
-              className='newsCardS__save-button'
+              className='newscards__save-button'
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
@@ -28,18 +28,18 @@ function NewsCardSaved({ card, handleCardDelete }) {
                     isHovered ? 'src/assets/trashBin-dark.svg' : 'src/assets/trashBin.svg'
                   } 
                   alt='bookmark image' 
-                  className={`newsCardS__save-button_image ${isHovered ? 'newsCardS__save-button_image-hov' : ''}`}
+                  className={`newscards__save-button_image ${isHovered ? 'newscards__save-button_image-hov' : ''}`}
                   onClick={handleDeleteClick}
                 />
             </button>
-            <div className="newsCardS__keyword_div">
-                <p className="newsCardS__keyword">{nature}</p>
+            <div className="newscards__keyword_div">
+                <p className="newscards__keyword">{nature}</p>
             </div>
-            <img src={card.img} className='newsCardS__image' alt='card image' />
-            <p className='newsCardS__date'>{card.date}</p>
-            <h2 className="newsCardS__title">{card.title}</h2>
-            <p className="newsCardS__body">{card.body}</p>
-            <h3 className="newsCardS__site">{card.site}</h3>
+            <img src={card.img} className='newscards__image' alt='card image' />
+            <p className='newscards__date'>{card.date}</p>
+            <h2 className="newscards__title">{card.title}</h2>
+            <p className="newscards__body">{card.body}</p>
+            <h3 className="newscards__site">{card.site}</h3>
         </div>
     )
 };

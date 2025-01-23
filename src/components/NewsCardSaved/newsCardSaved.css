@@ -1,4 +1,4 @@
-.newsCardS {
+.newscards {
     max-width: 400px;
     width: 100%;
     min-height: 580px;
@@ -10,7 +10,7 @@
     overflow: hidden;
 }
 
-.newsCardS__delete {
+.newscards__delete {
   display: flex;
   align-items: center;
   position: absolute;
@@ -24,11 +24,11 @@
   transition: opacity 0.25s linear;
 }
 
-.newsCardS_delete_on {
+.newscards_delete_on {
   opacity: 1;
 }
 
-.newsCardS__delete_prompt {
+.newscardc__delete_prompt {
   font-size: 12px;
   font-weight: 500;
   line-height: 1.2;
@@ -36,7 +36,7 @@
   padding: 0 8px;
 }
 
-.newsCardS__save-button {
+.newscards__save-button {
   position: absolute;
   max-width: 40px;
   width: 100%;
@@ -50,7 +50,7 @@
   padding: 0;
 }
 
-.newsCardS__save-button_image {
+.newscards__save-button_image {
   max-width: 14px;
   width: 100%;
   min-height: 19px;
@@ -58,11 +58,11 @@
   transition: max-width 0.25s linear;
 }
 
-.newsCardS__save-button_image-hov {
+.newscards__save-button_image-hov {
   max-width: 17px;
 }
 
-.newsCardS__keyword_div {
+.newscards__keyword_div {
     display: flex;
     align-items: center;
     position: absolute;
@@ -74,7 +74,7 @@
     border-radius: 8px;
 }
 
-.newsCardS__keyword {
+.newscards__keyword {
     font-size: 12px;
     font-weight: 500;
     line-height: 1.2;
@@ -82,14 +82,14 @@
     padding: 0 22px;
 }
 
-.newsCardS__image {
+.newscards__image {
     max-width: fit-content;
     width: 100%;
     min-height: 272px;
     object-fit: cover;
 }
 
-.newsCardS__date {
+.newscards__date {
   color: #B6BCBF;
   font-size: 18px;
   font-weight: 400;
@@ -97,7 +97,7 @@
   margin: 20px auto 12px 24px;
 }
 
-.newsCardS__title {
+.newscards__title {
   color: #1A1B22;
   font-size: 26px;
   font-weight: 400;
@@ -105,7 +105,7 @@
   margin: 0 24px 16px;
 }
 
-.newsCardS__body {
+.newscards__body {
  color: #1A1B22;
  font-size: 16px;
  font-weight: 400;
@@ -114,7 +114,7 @@
  text-overflow: ellipsis;
 }
 
-.newsCardS__site {
+.newscards__site {
   color: #B6BCBF;
   font-size: 16px;
   font-weight: 700;
@@ -123,27 +123,27 @@
 }
 
 @media screen and (max-width: 800px) {
-  .newsCardS {
+  .newscards {
     max-width: 280px;
     min-height: 420px;
   }
 
-  .newsCardS__image {
+  .newscards__image {
     min-height: 150px;
   }
 
-  .newsCardS__title {
+  .newscards__title {
     font-size: 22px;
   }
   
 }
 
 @media screen and (max-width: 430px) {
-  .newsCardS__keyword_div {
+  .newscards__keyword_div {
     left: 20px
   }
 
-  .newsCardS__delete {
+  .newscards__delete {
     right: 24px;
     top: 72px;
   }

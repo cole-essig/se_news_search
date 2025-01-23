@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from "react-router-dom";
 import SavedNews from '../SavedNews/SavedNews';
 import Main from '../Main/Main';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import LoginModal from '../LoginModal/LoginModal';
 import RegisterModal from '../RegisterModal/RegisterModal'
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
@@ -153,6 +155,13 @@ function App() {
           <Route
             path='/'
             element={
+              <>
+              <Header 
+                isLoggedIn={isLoggedIn} 
+                signOut={signOut} 
+                fetchSearchResults={fetchSearchResults} 
+                handleSignInClick={handleSignInClick} 
+              />
               <Main 
                 isLoggedIn={isLoggedIn} 
                 signOut={signOut} 
@@ -162,6 +171,8 @@ function App() {
                 handleSignInClick={handleSignInClick}
                 isLoading={isLoading}
               />
+              <Footer />
+              </>
             }
           />
           <Route

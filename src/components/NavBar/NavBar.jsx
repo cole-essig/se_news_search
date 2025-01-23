@@ -24,7 +24,7 @@ function NavBar({ isLoggedIn, signOut, className, isHome, signInClick }) {
     }
 
     return(
-        <div className='nav'>
+        <nav className='nav'>
                 <div className='nav__static-link'>
                   <Link to='/' className={`nav__logo-home ${className}`}>
                     NewsExplorer
@@ -72,7 +72,7 @@ function NavBar({ isLoggedIn, signOut, className, isHome, signInClick }) {
                     </button>
                   </div>
                 }
-              </div>
+              </nav>
     )
 };
 

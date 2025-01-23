@@ -1,4 +1,4 @@
-.newsCard {
+.newscard {
     max-width: 400px;
     width: 100%;
     min-height: 580px;
@@ -10,7 +10,7 @@
     overflow: hidden;
 }
 
-.newsCard__signin {
+.newscard__signin {
   display: flex;
   align-items: center;
   position: absolute;
@@ -25,18 +25,18 @@
   transition: opacity 0.25s linear;
 }
 
-.newsCards_signin_on {
+.newsvcards_signin_on {
   opacity: 1;
 }
 
-.newsCard__signin_prompt {
+.newscard__signin_prompt {
   font-size: 12px;
   font-weight: 500;
   line-height: 1.2;
   margin: auto;
 }
 
-.newsCard__save-button {
+.newscard__save-button {
   position: absolute;
   max-width: 40px;
   width: 100%;
@@ -50,7 +50,7 @@
   padding: 0;
 }
 
-.newsCard__save-button_image {
+.newscard__save-button_image {
   max-width: 14px;
   width: 100%;
   min-height: 19px;
@@ -58,18 +58,18 @@
   transition: max-width 0.25s linear;
 }
 
-.newsCard__save-button_image-hov {
+.newscard__save-button_image-hov {
   max-width: 17px;
 }
 
-.newsCard__image {
+.newscard__image {
     max-width: fit-content;
     width: 100%;
     min-height: 272px;
     object-fit: cover;
 }
 
-.newsCard__date {
+.newscard__date {
   color: #B6BCBF;
   font-size: 18px;
   font-weight: 400;
@@ -77,7 +77,7 @@
   margin: 20px auto 12px 24px;
 }
 
-.newsCard__title {
+.newscard__title {
   color: #1A1B22;
   font-size: 26px;
   font-weight: 400;
@@ -86,7 +86,7 @@
   margin: 0 24px 16px;
 }
 
-.newsCard__body {
+.newscard__body {
  color: #1A1B22;
  font-size: 16px;
  font-weight: 400;
@@ -95,7 +95,7 @@
  text-overflow: ellipsis;
 }
 
-.newsCard__site {
+.newscard__site {
   color: #B6BCBF;
   font-size: 16px;
   font-weight: 700;
@@ -104,16 +104,16 @@
 }
 
 @media screen and (max-width: 800px) {
-  .newsCard {
+  .newscard {
     max-width: 260px;
     min-height: 420px;
   }
 
-  .newsCard__image {
+  .newscard__image {
     min-height: 150px;
   }
 
-  .newsCard__title {
+  .newscard__title {
     font-size: 22px;
   }
   

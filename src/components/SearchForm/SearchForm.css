@@ -1,4 +1,4 @@
-.searchBar {
+.searchbar {
   position: relative;
   max-width: 608px;
   width: 100%;
@@ -6,7 +6,7 @@
   padding: 0;
 }
 
-.searchBar__input {
+.searchbar__input {
     display: block;
     width: 65%; 
     min-height: 68px;            
@@ -21,12 +21,12 @@
     line-height: 1.2;
   }
 
-  .searchBar__input:focus {
+  .searchbar__input:focus {
     outline: none;      
     border: 1px solid transparent;
   }
 
-.searchBar__button {
+.searchbar__button {
     background-color: #2F71E5;
     max-width: 168px;
     width: 100%;
@@ -44,16 +44,16 @@
 }
 
 @media screen and (max-width: 600px) {
-  .searchBar {
+  .searchbar {
     max-width: 85%;
   }
 
-  .searchBar__input {
+  .searchbar__input {
     width: 100%;
     padding: 0;
   }
 
-  .searchBar__button {
+  .searchbar__button {
     top: 80px;
     right: 0;
     max-width: 85vw;

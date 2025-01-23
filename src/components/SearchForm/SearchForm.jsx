@@ -14,16 +14,16 @@ const handleSubmit = (e) => {
 
     return(
         <>
-        <form className="searchBar" onSubmit={handleSubmit} >
+        <form className="searchbar" onSubmit={handleSubmit} >
                 <input 
                     type='text'
-                    className='searchBar__input'
+                    className='searchbar__input'
                     id='searchBar'
                     placeholder='Enter Topic'
                     value={search}
                     onChange={handleSearchBarChange}
                 />
-            <button type="submit" className="searchBar__button" >Search</button>
+            <button type="submit" className="searchbar__button" >Search</button>
         </form>
         </>
     )

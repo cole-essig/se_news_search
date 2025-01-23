@@ -1,21 +1,21 @@
 @font-face {
   font-family: "Roboto";
-  src: url(../../assets/roboto-400-regular.woff2);
+  src: url(../../assets/fonts/roboto-400-regular.woff2);
 }
 
 @font-face {
   font-family: 'Roboto Slab';
-  src: url(../../assets/roboto-slab-400-regular.woff2);
+  src: url(../../assets/fonts/roboto-slab-400-regular.woff2);
 }
 .page {
   background-color: #fff;
   font-family: "Roboto", 'Times New Roman', Times, serif;
   max-width: 100vw;
   width: 100%;
-  overflow: hidden;
-  box-sizing: border-box;
-  flex-shrink: 1;
 }
 
+* {
+  outline: solid 1px red;
+}
 
 
