@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useContext } from "react";
 import { CurrentUserContext } from "../../utils/contexts/CurrentUserContext";
 
-function NavBar({ isLoggedIn, signOut, isHome, signInClick }) {
+function NavBar({ isLoggedIn, signOut, isHome, signInClick, className }) {
     const currentUser = useContext(CurrentUserContext);
     const [screenSize, setScreenSize] = useState(window.innerWidth < 600);
     const [dropDown, setDropDown] = useState(false);
@@ -34,7 +34,7 @@ function NavBar({ isLoggedIn, signOut, isHome, signInClick }) {
     return(
         <nav className={`nav ${screenSize && dropDown ? 'dropdown_black' : ''}`}>
             <div className='nav__static-link'>
-              <Link to='/' className={`nav__logo-home`}>
+              <Link to='/' className={`nav__logo-home ${!dropDown ? className : ''}`}>
                 NewsExplorer
               </Link>
             </div>
@@ -60,7 +60,7 @@ function NavBar({ isLoggedIn, signOut, isHome, signInClick }) {
                     </Link>
                     <Link 
                       to='/saved-news' 
-                      className='nav__saved-articles_mobile'
+                      className={`nav__saved-articles_mobile`}
                     >
                       Saved Articles
                     </Link>
@@ -101,13 +101,13 @@ function NavBar({ isLoggedIn, signOut, isHome, signInClick }) {
                   <>
                     <Link 
                       to='/' 
-                      className={`nav__home-link`}
+                      className={`nav__home-link ${className}`}
                     >
                       Home
                     </Link>
                     <Link 
                       to='/saved-news' 
-                      className={`nav__saved-articles`}
+                      className={`nav__saved-articles ${className}`}
                     >
                       Saved Articles
                     </Link>
@@ -116,7 +116,7 @@ function NavBar({ isLoggedIn, signOut, isHome, signInClick }) {
                     >
                       <div className='nav__user-div'>
                         <span 
-                          className={`nav__user-text`} 
+                          className={`nav__user-text ${className}`} 
                         >
                           {currentUser.user}
                         </span> 
