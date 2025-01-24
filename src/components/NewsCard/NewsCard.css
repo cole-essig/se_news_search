@@ -1,0 +1,120 @@
+.newscard {
+    max-width: 400px;
+    width: 100%;
+    min-height: 580px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.newscard__signin {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 24px;
+  right: 69px;
+  max-width: 182px;
+  width: 100%;
+  min-height: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.25s linear;
+}
+
+.newsvcards_signin_on {
+  opacity: 1;
+}
+
+.newscard__signin_prompt {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: auto;
+}
+
+.newscard__save-button {
+  position: absolute;
+  max-width: 40px;
+  width: 100%;
+  min-height: 40px;
+  background-color: #fff;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 0;
+}
+
+.newscard__save-button_image {
+  max-width: 14px;
+  width: 100%;
+  min-height: 19px;
+  color: #2F71E5;
+  transition: max-width 0.25s linear;
+}
+
+.newscard__save-button_image-hov {
+  max-width: 17px;
+}
+
+.newscard__image {
+    max-width: fit-content;
+    width: 100%;
+    min-height: 272px;
+    object-fit: cover;
+}
+
+.newscard__date {
+  color: #B6BCBF;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 20px auto 12px 24px;
+}
+
+.newscard__title {
+  color: #1A1B22;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: "Roboto Slab", 'Times New Roman', Times, serif;
+  margin: 0 24px 16px;
+}
+
+.newscard__body {
+ color: #1A1B22;
+ font-size: 16px;
+ font-weight: 400;
+ line-height: 1.2;
+ margin: 0 24px 18px;
+ text-overflow: ellipsis;
+}
+
+.newscard__site {
+  color: #B6BCBF;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: auto 24px 24px;
+}
+
+@media screen and (max-width: 800px) {
+  .newscard {
+    max-width: 260px;
+    min-height: 420px;
+  }
+
+  .newscard__image {
+    min-height: 150px;
+  }
+
+  .newscard__title {
+    font-size: 22px;
+  }
+  
+}
