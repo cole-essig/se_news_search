@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import NewsCard from '../NewsCard/NewsCard';
 import './SearchResults.css';
 
@@ -14,8 +14,11 @@ function SearchResults({ news, isLoggedIn, handleCardMark }) {
         ]);
       return newIndex;   
       });
-      
   };
+  useEffect(() => {
+    setDisplayNews(news.slice(0, 3)); 
+    setIndex(0);
+  }, [news]); 
     return(
         <div className="search">
            <h2 className="search__header">SEARCH RESULTS</h2> 
