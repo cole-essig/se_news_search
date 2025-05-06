@@ -75,7 +75,6 @@ function App() {
   // ----------------------------------
   const fetchSearchResults = (keyword) => {
     setIsLoading(true);
-    console.log(keyword)
     getNewsbyKeyword(keyword)
     .then((res) => {
       const results = handleSearchInfo(res.articles);
@@ -89,7 +88,7 @@ function App() {
         _id: Math.random(),
         keyword: keyword,
       }));
-      setNews(prevNews => [...newCards, ...prevNews]);
+      setNews(newCards);
       setIsLoading(false);
     })
     .catch((err) => {
