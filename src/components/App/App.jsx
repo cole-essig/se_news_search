@@ -75,6 +75,7 @@ function App() {
   // ----------------------------------
   const fetchSearchResults = (keyword) => {
     setIsLoading(true);
+    console.log(keyword)
     getNewsbyKeyword(keyword)
     .then((res) => {
       const results = handleSearchInfo(res.articles);
@@ -86,6 +87,7 @@ function App() {
         site: item.source.name,
         url: item.url,
         _id: Math.random(),
+        keyword: keyword,
       }));
       setNews(prevNews => [...newCards, ...prevNews]);
       setIsLoading(false);
@@ -183,7 +185,7 @@ function App() {
                   isLoggedIn={isLoggedIn} 
                   savedCards={savedCards} 
                   signOut={signOut} 
-                  handleCardDelete={handleCardDelete} 
+                  handleCardDelete={handleCardDelete}
                 />
               </ProtectedRoute>
             }

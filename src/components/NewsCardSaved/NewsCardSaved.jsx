@@ -33,7 +33,7 @@ function NewsCardSaved({ card, handleCardDelete }) {
                 />
             </button>
             <div className="newscards__keyword_div">
-                <p className="newscards__keyword">{nature}</p>
+                <p className="newscards__keyword">{card.keyword}</p>
             </div>
             <img src={card.img} className='newscards__image' alt='card image' />
             <p className='newscards__date'>{card.date}</p>

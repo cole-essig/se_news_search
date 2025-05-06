@@ -8,8 +8,17 @@ import './SavedNews.css';
 
 function SavedNews({ isLoggedIn, savedCards, signOut, handleCardDelete }) {
     const currentUser = useContext(CurrentUserContext);
-    // fake keyword, create logic to fetch from saved cards here
-    const keyword = 'Yellowstone, Rockwell, Nature';
+    let keyword;
+    const createKeywords = (savedCards) => {
+      if (savedCards.length === 0) {
+        return keyword = ""
+      } else if (savedCards.length === 1) {
+        return keyword = ` ${savedCards[0].keyword}`;
+      } else {
+         return keyword =` ${savedCards[0].keyword}, ${savedCards[1].keyword}, ...`;
+      }
+    }
+    createKeywords(savedCards);
     return (
       <div className="savedNews">
         <NavBar isLoggedIn={isLoggedIn} signOut={signOut} className={'saved-news-nav'} isHome={false} />
